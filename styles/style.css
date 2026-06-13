@@ -121,6 +121,13 @@
   text-shadow: 1px 1px 0 var(--label-stroke-color);
 }
 
+@supports (-webkit-text-stroke: 1px var(--label-stroke-color)) {
+  .card__label {
+    -webkit-text-stroke: 1px var(--label-stroke-color);
+    text-shadow: none;
+  }
+}
+
 .card__icon-button {
   cursor: pointer;
   padding: 0;
@@ -140,17 +147,11 @@
 }
 
 .card__like-button {
-  min-width: 130px;
   height: 38px;
+  min-width: 130px;
   justify-content: center;
 }
 
-@supports (-webkit-text-stroke: 1px var(--label-stroke-color)) {
-  .card__label {
-    -webkit-text-stroke: 1px var(--label-stroke-color);
-    text-shadow: none;
-  }
-}
 
 .footer_button {
   display: flex;
@@ -159,31 +160,33 @@
 }
 
 .button {
+  cursor: pointer;
+  font-family: var(--accent-font), monospace;
+  font-size: 14px;
   display: flex;
   align-items: center;
   gap: 8px;
   background-color: #fff;
   border: var(--block-border);
-  cursor: pointer;
-  padding: 15px 20px;
-  font-family: var(--accent-font), monospace;
-  font-size: 14px;
-  color: var(--button-text-color);
   transition: box-shadow 0.3s ease;
   position: relative;
+  color: var(--button-text-color);
   overflow: hidden;
+  padding: 15px 20px;
+
 }
 
 .button::before {
   content: "";
+  pointer-events: none;
   position: absolute;
   inset: 0;
   background-color: #000;
   transform-origin: left;
   transform: scaleX(0);
   transition: transform 0.5s ease-in-out;
-  pointer-events: none;
 }
+
 
 .button:hover::before {
   transform: scaleX(1);
@@ -199,30 +202,31 @@
 
 .button__text {
   position: relative;
+  color: var(--button-text-color);
   z-index: 1;
   mix-blend-mode: difference;
-  color: var(--button-text-color);
 }
 
 .save-button__icon {
   position: relative;
+  flex-shrink: 0;
   z-index: 1;
   mix-blend-mode: difference;
   fill: currentColor;
   color: var(--button-text-color);
-  flex-shrink: 0;
 }
 
 .dialog {
   display: none;
-  border: var(--block-border);
-  padding: 30px;
-  background-color: #fff;
   max-width: 353px;
+  border: var(--block-border);
+  background-color: #fff;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   margin: 0;
+  padding: 30px;
+
 }
 
 .dialog[open] {
@@ -314,10 +318,13 @@
     width: 28px;
     height: 28px;
   }
+
+
   .dialog[open] {
     padding: 30px 40px;
     width: 341px;
   }
+
 
   .header {
     min-height: 327px;
