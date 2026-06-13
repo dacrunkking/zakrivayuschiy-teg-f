@@ -22,5 +22,9 @@
     "lintfix": "stylelint '**/*.css' --fix",
     "checkAll": "npm run check && npm run lint",
     "fixAll": "npm run format && npm run lintfix"
+  },
+  "dependencies": {
+    "prettier": "^3.8.4",
+    "stylelint": "^17.13.0"
   }
 }
