@@ -1,5 +1,6 @@
 /* В этом файле будут храниться все значения переменных в исходном состоянии, а так же их изменения в зависимости от ширины устройства */
 :root {
+  --main-bg-color: #fff;
   --main-font: 'Inter', sans-serif;
   --accent-font: 'PressStart2P', monospace;
   --regular-weight: 410;
@@ -20,6 +21,7 @@
       transparent 4px
     ),
     linear-gradient(to bottom, #e7e7e7 0%, #e7e7e7 0.01%, #1a1a1a 100%);
+  --header-padding-block: 127px;
   --block-width: clamp(375px, 70vw, 700px);
   --regular-font-size: 18px;
   --block-border: 2px solid black;
@@ -33,5 +35,6 @@
 @media (width <= 375px) {
   :root {
     --block-width: 100%;
+    --header-padding-block: 120px;
   }
 }

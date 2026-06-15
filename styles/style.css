@@ -34,15 +34,17 @@
   justify-content: center;
   align-items: center;
   width: var(--block-width);
-  min-height: 368px;
   margin: 0 auto;
   border: var(--block-border);
-  background-color: #fff;
+  background-color: var(--main-bg-color);
 }
 
 .header {
   width: var(--block-width);
   margin: 100px auto;
+  padding-block: var(--header-padding-block);
+
+
 }
 
 .header__logo {
@@ -125,7 +127,7 @@
   display: flex;
   align-items: center;
   border: 2px solid transparent;
-  padding: 0;
+  padding: 3.5px;
   background: transparent;
   transition: border-color 0.3s ease;
   cursor: pointer;
@@ -145,7 +147,7 @@
   height: 38px;
 }
 
-.main__button {
+.content__main-button {
   display: flex;
   justify-content: center;
   padding: 0 0 100px;
@@ -162,7 +164,7 @@
   color: var(--button-text-color);
   font-family: var(--accent-font), monospace;
   font-size: 14px;
-  background-color: #fff;
+  background-color: var(--main-bg-color);
   transition: box-shadow 0.3s ease;
   cursor: pointer;
 }
@@ -207,15 +209,15 @@
 }
 
 .dialog {
-  top: 50%;
-  left: 50%;
+  top: 0;
+  left: 0;
   display: none;
   max-width: 353px;
   margin: 0;
+  margin: auto;
   border: var(--block-border);
   padding: 30px;
-  background-color: #fff;
-  transform: translate(-50%, -50%);
+  background-color: var(--main-bg-color);
 }
 
 .dialog[open] {
@@ -313,7 +315,4 @@
     padding: 30px 40px;
   }
 
-  .header {
-    min-height: 327px;
-  }
 }
